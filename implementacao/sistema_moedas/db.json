@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "nome": "A",
+      "email": "A@a.com",
+      "tipo": "A",
+      "cpf_rg": "1",
+      "senha": "Aser",
+      "id": 1
+    },
+    {
+      "nome": "A",
+      "email": "a@a.com",
+      "tipo": "Medico",
+      "cpf_rg": "1",
+      "senha": "1",
+      "id": 2
+    },
+    {
+      "nome": "b",
+      "email": "b",
+      "tipo": "b",
+      "cpf_rg": "b",
+      "senha": "b",
+      "id": 3
+    }
+  ]
+}
