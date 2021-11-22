@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Cadastro from "./Cadastro";
+import Itens from "./Itens";
 
 import { NotificationManager } from "react-notifications";
 
@@ -106,17 +107,20 @@ export default class User extends React.Component {
 
   render() {
     return (
-      <Cadastro
-        nome={this.state.user.nome}
-        email={this.state.user.email}
-        tipo={this.state.user.tipo}
-        cpf_rg={this.state.user.cpf_rg}
-        senha={this.state.user.senha}
-        clear={this.clear}
-        save={this.save}
-        updateField={this.updateField}
-        handleEnterPress={this.handleEnterPress}
-      />
+      <React.Fragment>
+        <Cadastro
+          nome={this.state.user.nome}
+          email={this.state.user.email}
+          tipo={this.state.user.tipo}
+          cpf_rg={this.state.user.cpf_rg}
+          senha={this.state.user.senha}
+          clear={this.clear}
+          save={this.save}
+          updateField={this.updateField}
+          handleEnterPress={this.handleEnterPress}
+        />
+        <Itens list={this.state.list} load={this.load} remove={this.remove} />
+      </React.Fragment>
     );
   }
 }

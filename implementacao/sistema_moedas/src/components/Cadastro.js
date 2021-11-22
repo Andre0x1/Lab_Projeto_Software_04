@@ -16,28 +16,6 @@ export default (props) => (
         <article className="width-p-50 backgroundForm position-relative">
           <div className="login-form width-p-60">
             <h1 className="Spotlight-bold">Cadastro</h1>
-
-            <div className="form-label">
-              <Link
-                className="btn btn-secondary"
-                type="submit"
-                value="Aluno"
-                to="/cadastro"
-                onClick={props.save}
-              >
-                Aluno
-              </Link>
-              <Link
-                className="btn btn-secondary"
-                type="submit"
-                value="Empresa"
-                to="/cadastro"
-                onClick={props.save}
-              >
-                Empresa
-              </Link>
-            </div>
-
             <form className="margin-bottom-2" action="">
               <div className="form-label margin-bottom-1">
                 <label className="Body2-bold margin-bottom-1"> Nome</label>
@@ -70,18 +48,29 @@ export default (props) => (
               </div>
               <div className="form-label margin-bottom-1">
                 <label className="Body2-bold margin-bottom-1"> Tipo</label>
-                <input
-                  type="text"
-                  name="tipo"
-                  id="tipo"
-                  className="form-control"
-                  autoComplete="off"
-                  value={props.tipo}
-                  onChange={(e) => props.updateField(e)}
-                  onKeyPress={props.handleEnterPress}
-                  placeholder="Digite o tipo..."
-                />
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="tipo">
+                      Opções
+                    </label>
+                  </div>
+                  <select
+                    class="custom-select"
+                    id="tipo"
+                    name="tipo"
+                    id="tipo"
+                    value={props.tipo}
+                    onChange={(e) => props.updateField(e)}
+                    onKeyPress={props.handleEnterPress}
+                  >
+                    <option selected>Choose...</option>
+                    <option value="Aluno">Aluno</option>
+                    <option value="Empresa">Empresa</option>
+                    <option value="Professor">Professor</option>
+                  </select>
+                </div>
               </div>
+
               <div className="form-label margin-bottom-1">
                 <label className="Body2-bold margin-bottom-1"> CPF/RG</label>
                 <input
@@ -115,7 +104,7 @@ export default (props) => (
                   className="btn btn-primary"
                   type="submit"
                   value="Cadastrar"
-                  to="/"
+                  to="/cadastro"
                   onClick={props.save}
                 >
                   Cadastrar
